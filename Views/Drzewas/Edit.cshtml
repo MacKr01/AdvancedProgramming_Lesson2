@@ -1,0 +1,54 @@
+﻿@model AdvancedProgramming_Lesson1.Models.Drzewa
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Drzewa</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Wysokosc" class="control-label"></label>
+                <input asp-for="Wysokosc" class="form-control" />
+                <span asp-validation-for="Wysokosc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rodzaj" class="control-label"></label>
+                <input asp-for="Rodzaj" class="form-control" />
+                <span asp-validation-for="Rodzaj" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Data_posadzenia" class="control-label"></label>
+                <input asp-for="Data_posadzenia" class="form-control" />
+                <span asp-validation-for="Data_posadzenia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Srednica_pnia" class="control-label"></label>
+                <input asp-for="Srednica_pnia" class="form-control" />
+                <span asp-validation-for="Srednica_pnia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kolor_lisci" class="control-label"></label>
+                <input asp-for="Kolor_lisci" class="form-control" />
+                <span asp-validation-for="Kolor_lisci" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,59 @@
+﻿@model IEnumerable<AdvancedProgramming_Lesson1.Models.Drzewa>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Wysokosc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rodzaj)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Data_posadzenia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Srednica_pnia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kolor_lisci)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Wysokosc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rodzaj)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data_posadzenia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Srednica_pnia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kolor_lisci)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
